@@ -14,7 +14,8 @@ public class ThreadPoolManager {
 	private ExecutorService service;
 
 	private ThreadPoolManager() {
-		int num = Runtime.getRuntime().availableProcessors() * 20;
+		//int num = Runtime.getRuntime().availableProcessors() * 20;
+		int num = 1;
 		service = Executors.newFixedThreadPool(num);
 	}
 
