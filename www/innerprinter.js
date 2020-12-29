@@ -1,7 +1,12 @@
 exec = require('cordova/exec');
 
 module.exports = {
-
+  bufferToBase64: function(buf) {
+    var binstr = Array.prototype.map.call(buf, function (ch) {
+      return String.fromCharCode(ch);
+    }).join('');
+    return btoa(binstr);
+  },
   printerInit: function (resolve, reject) {
     exec(resolve, reject, "Printer", "printerInit", []);
   },
@@ -61,6 +66,17 @@ module.exports = {
   },
   printerStatusStopListener: function () {
     exec(function () {}, function () {}, "Printer", "printerStatusStopListener", []);
-  }
-
+  },
+  setBold: function (resolve, reject) {
+    var bold = [0x1b, 0x45, 0x1];
+    var boldUint8 = new Uint8Array(bold);
+    var base64Data = this.bufferToBase64(boldUint8);
+    exec(resolve, reject, "Printer", "sendRAWData", [base64Data]);
+  },
+  unsetBold: function (resolve, reject) {
+    var bold = [0x1b, 0x45, 0x0];
+    var boldUint8 = new Uint8Array(bold);
+    var base64Data = this.bufferToBase64(boldUint8);
+    exec(resolve, reject, "Printer", "sendRAWData", [base64Data]);
+  },
 }
