@@ -79,4 +79,19 @@ module.exports = {
     var base64Data = this.bufferToBase64(boldUint8);
     exec(resolve, reject, "Printer", "sendRAWData", [base64Data]);
   },
+  enterPrinterBuffer: function (boolean) {
+    exec(function () {}, function () {}, "Printer", "enterPrinterBuffer", [boolean]);
+  },
+  exitPrinterBuffer: function (boolean) {
+    exec(function () {}, function () {}, "Printer", "exitPrinterBuffer", [boolean]);
+  },
+  exitPrinterBufferWithCallBack: function (boolean, resolve, reject) {
+    exec(resolve, reject, "Printer", "exitPrinterBufferWithCallBack", [boolean]);
+  },
+  commitPrinterBuffer: function () {
+    exec(function () {}, function () {}, "Printer", "commitPrinterBuffer", []);
+  },
+  commitPrinterBufferWithCallback: function (resolve, reject) {
+    exec(resolve, reject, "Printer", "commitPrinterBufferWithCallback", []);
+  },
 }
