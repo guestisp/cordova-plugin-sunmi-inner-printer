@@ -30,5 +30,6 @@ interface ICallback {
 	* code：	异常代码 0 成功 1 失败
 	* msg:	异常描述
 	*/
-	oneway void  onPrintResult(int code, String msg);	
+	oneway void  onPrintResult(int code, String msg);
+	
 }
