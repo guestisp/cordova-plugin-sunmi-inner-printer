@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin
   xmlns="http://www.phonegap.com/ns/plugins/1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-sunmi-inner-printer" version="1.2.2">
+  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-sunmi-inner-printer" version="1.2.3">
   <name>SunmiInnerPrinter</name>
   <engines>
     <engine name="cordova" version=">=7.1.0"/>
@@ -47,5 +47,6 @@
     <source-file src="src/android/com/sunmi/trans/TransBean.aidl" target-dir="src/com/sunmi/trans/"/>
     <source-file src="src/android/woyou/aidlservice/jiuiv5/IWoyouService.aidl" target-dir="src/woyou/aidlservice/jiuiv5/"/>
     <source-file src="src/android/woyou/aidlservice/jiuiv5/ICallback.aidl" target-dir="src/woyou/aidlservice/jiuiv5/"/>
+    <source-file src="src/android/woyou/aidlservice/jiuiv5/ITax.aidl" target-dir="src/woyou/aidlservice/jiuiv5/"/>
   </platform>
 </plugin>
